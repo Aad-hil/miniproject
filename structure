@@ -1,0 +1,52 @@
+TaxCalculationApp/
+│── README.md
+│── pom.xml / build.gradle        # Build tool config (Maven/Gradle)
+│── .gitignore
+│
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── taxapp/
+│   │   │           ├── login/
+│   │   │           │   └── LoginSystem.java          # Task 1: Console login
+│   │   │           │
+│   │   │           ├── ui/
+│   │   │           │   ├── WelcomeScreen.java        # Main menu & navigation
+│   │   │           │   └── MenuHandler.java          # Handles user choices
+│   │   │           │
+│   │   │           ├── model/
+│   │   │           │   ├── Property.java             # Property entity
+│   │   │           │   ├── Vehicle.java              # Vehicle entity
+│   │   │           │   └── Asset.java                # Abstract base class
+│   │   │           │
+│   │   │           ├── service/
+│   │   │           │   ├── PropertyService.java      # Business logic for property tax
+│   │   │           │   ├── VehicleService.java       # Business logic for vehicle tax
+│   │   │           │   └── TaxCalculator.java        # Total tax calculation
+│   │   │           │
+│   │   │           ├── storage/
+│   │   │           │   ├── DataStore.java            # Temporary storage (Collections)
+│   │   │           │   └── FileHandler.java          # Optional persistence
+│   │   │           │
+│   │   │           ├── util/
+│   │   │           │   ├── InputValidator.java       # Validations (age, cost, etc.)
+│   │   │           │   └── Formatter.java            # Decimal formatting, tabular output
+│   │   │           │
+│   │   │           └── Main.java                     # Entry point
+│   │   │
+│   │   └── resources/
+│   │       └── application.properties                # Config (if needed)
+│   │
+│   └── test/
+│       └── java/
+│           └── com/
+│               └── taxapp/
+│                   ├── PropertyServiceTest.java
+│                   ├── VehicleServiceTest.java
+│                   └── TaxCalculatorTest.java
+│
+└── docs/
+    ├── specification.md          # Product specification document
+    ├── sprint-plan.md            # Sprint planning & timeline
+    └── architecture-diagram.png  # Flow diagram
