@@ -1,0 +1,119 @@
+{
+  "info": {
+    "name": "PG Accommodation System",
+    "_postman_id": "12345678-abcd-efgh-ijkl-987654321000",
+    "description": "Test cases for PG Accommodation System API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Tenant",
+      "item": [
+        {
+          "name": "Get PGs by City",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8085/pg/city/1"
+          }
+        },
+        {
+          "name": "Get PGs by Locality",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8085/pg/locality/Whitefield"
+          }
+        },
+        {
+          "name": "Get PG Details",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8085/pg/details/1"
+          }
+        },
+        {
+          "name": "Get Owner Contact (AVAILABLE)",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8085/pg/owner/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Owner",
+      "item": [
+        {
+          "name": "Add PG Place",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "http://localhost:8085/owner/places?ownerId=1&cityId=1&locality=Whitefield",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"registrationNumber\": \"PG004\",\n  \"title\": \"Modern PG in Whitefield\",\n  \"builtUpArea\": 1100.0,\n  \"rentAmount\": 9000.0,\n  \"address\": \"Near Metro Station\"\n}"
+            }
+          }
+        },
+        {
+          "name": "List Owner Places",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8085/owner/places?ownerId=1"
+          }
+        },
+        {
+          "name": "Change PG Status",
+          "request": {
+            "method": "PATCH",
+            "url": "http://localhost:8085/owner/places/3/status?ownerId=1&status=AVAILABLE"
+          }
+        },
+        {
+          "name": "Edit PG Place",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "http://localhost:8085/owner/places/1?ownerId=1",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated Cozy PG in Whitefield\",\n  \"rentAmount\": 8500.0\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete PG Place",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:8085/owner/places/1?ownerId=1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admin",
+      "item": [
+        {
+          "name": "Add City",
+          "request": {
+            "method": "POST",
+            "url": "http://localhost:8085/admin/cities?name=Hyderabad"
+          }
+        },
+        {
+          "name": "Add Locality",
+          "request": {
+            "method": "POST",
+            "url": "http://localhost:8085/admin/localities?cityId=1&name=Koramangala"
+          }
+        },
+        {
+          "name": "Delete PG Place",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:8085/admin/places/2"
+          }
+        }
+      ]
+    }
+  ]
+}

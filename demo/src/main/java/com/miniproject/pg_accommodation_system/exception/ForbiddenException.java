@@ -1,0 +1,7 @@
+package com.miniproject.pg_accommodation_system.exception;
+
+public class ForbiddenException extends RuntimeException {
+	public ForbiddenException(String message) {
+		super(message);
+	}
+}
